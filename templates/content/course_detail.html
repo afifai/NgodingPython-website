@@ -3,8 +3,56 @@
 {{object.name}}
 {% endblock title %}
 {% block content %}
-<h1>{{ object.name }}</h1>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-8">
+            <div class="card">
+                <div class="card-body">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="{{ object.video_intro_url }}" title="YouTube video"  allowfullscreen></iframe>
+                      </div>
+                      <h5 class="fw-bold mt-4">
+                          Description
+                      </h5>
+                      <p class="card-text">{{ object.description }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-title fw-bold mb-3 ms-3 mt-3 me-3">{{ object.name }}</div>
+                <div class="card-subtitle text-muted mb-3 ms-3 mt-1 me-3">{{ object.sub_title }}</div>
+                <p class="d-grid gap-2 ps-3 pe-3">
+                    <a href="" class="btn btn-dark fw-bold">Enroll</a>
+                </p>
+            </div>
+            <br>
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">
+                        Afif A. Iskandar
+                    </h4>
+                    <p class="card-subtitle">
+                        Instructor
+                    </p>
+                </div>
+                <div class="card-body">
+                    Deskripsi Insturktur
+                </div>
+            </div>
+            <br>
+            <div class="card">
+                <div class="card-body">
+                    <i class="fas fa-th"></i>
+                    &nbsp; {{ object.category }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <h1>{{ object.name }}</h1>
 <h1>{{ object.sub_title }}</h1>
 <h1>{{ object.description }}</h1>
-<h1>{{ object.video_intro_url }}</h1>
+<h1>{{ object.video_intro_url }}</h1> -->
 {% endblock content %}
