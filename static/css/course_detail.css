@@ -1,0 +1,12 @@
+.list-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list-item {
+    max-width: 240px;
+}
+
+.video-link {
+    text-decoration: none;
+}

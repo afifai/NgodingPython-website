@@ -50,13 +50,13 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row mt-5">
         <div class="col-12">
             <h5 class="fw-bold mb-3">
                 Kurikulum Course Ini
             </h5>
             {% for section in course.sections.all %}
-            <div class="card">
+            <div class="card mb-4">
                 <div class="card-body">
                     <div class="card-title fw-bold">
                         Section #{{ section.position }} - {{ section.title }}
@@ -65,15 +65,15 @@
                     <div class="list">
                         <div class="list-row">
                             {% for video in section.videos.all %}
-                            <div class="list-item mb-5">
-                                <div>
-                                    <img src="{{ video.thumbnail.url }}" alt="">
-                                </div>
-                            </div>
-                            <div class="mt-2">
-                                <div class="card-text">
-                                    {{ video.position }} - {{ video.title }}
-                                </div>
+                            <div class="list-item mb-3 me-3">
+                                <a class="video-link" href="">
+                                    <img src="{{ video.thumbnail.url }}" width="100%" alt="">
+                                    <div class="mt-2 text-dark">
+                                        <div class="card-text">
+                                            {{ video.position }} - {{ video.title }}
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
                             {% endfor %}
                         </div>
