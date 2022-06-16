@@ -50,6 +50,39 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-12">
+            <h5 class="fw-bold mb-3">
+                Kurikulum Course Ini
+            </h5>
+            {% for section in course.sections.all %}
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title fw-bold">
+                        Section #{{ section.position }} - {{ section.title }}
+                    </div>
+                    <hr>
+                    <div class="list">
+                        <div class="list-row">
+                            {% for video in section.videos.all %}
+                            <div class="list-item mb-5">
+                                <div>
+                                    <img src="{{ video.thumbnail.url }}" alt="">
+                                </div>
+                            </div>
+                            <div class="mt-2">
+                                <div class="card-text">
+                                    {{ video.position }} - {{ video.title }}
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 <!-- <h1>{{ object.name }}</h1>
 <h1>{{ object.sub_title }}</h1>

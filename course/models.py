@@ -40,6 +40,10 @@ class Course(models.Model):
             'slug': self.slug
         })
 
+    @property
+    def sections(self):
+        return self.section_set.all().order_by('position')
+
 
 class Section(models.Model):
     course = models.ForeignKey(
@@ -51,6 +55,10 @@ class Section(models.Model):
 
     def __str__(self):
         return self.title
+
+    @property
+    def videos(self):
+        return self.video_set.all().order_by('position')
 
 
 class Video(models.Model):
